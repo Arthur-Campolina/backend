@@ -15,6 +15,7 @@ JPG. A tecnologia a ser utilizada no Backend é de sua escolha.
 
 Backend desenvolvido com SpringBoot.
 Frontend desenvolvido com ReactJS - Typescript + MUI (Biblioteca de componentes React)
+Teste automatizado Frontend - Testing React Library
 
 ---
 
