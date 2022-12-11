@@ -19,17 +19,17 @@ public class StudentController {
     @Autowired
     public StudentController(IStudentService service) {this.service = service;}
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://delta-school.netlify.app")
     @GetMapping
     public ResponseEntity<Page<StudentDTO>> findAll(Pageable pageable) {
         return ResponseEntity.ok(service.findAll(pageable));
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://delta-school.netlify.app")
     @GetMapping("/{id}")
     public ResponseEntity<StudentDTO> findById(@PathVariable Integer id) {
         return ResponseEntity.ok(service.findById(id));
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://delta-school.netlify.app")
     @PostMapping
     public ResponseEntity<StudentDTO> novo(@RequestBody StudentDTO dto) {
         StudentDTO address = service.save(dto);
@@ -37,12 +37,12 @@ public class StudentController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(address.getId()).toUri();
         return ResponseEntity.created(uri).body(address);
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://delta-school.netlify.app")
     @PutMapping("/{id}")
     public ResponseEntity<StudentDTO> update(@PathVariable Integer id, @RequestBody StudentDTO StudentDTO) {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, StudentDTO));
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://delta-school.netlify.app")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
         service.delete(id);
